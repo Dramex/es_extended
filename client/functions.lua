@@ -45,9 +45,7 @@ ESX.SetPlayerData = function(key, val)
 end
 
 ESX.ShowNotification = function(msg)
-	SetNotificationTextEntry('STRING')
-	AddTextComponentSubstringPlayerName(msg)
-	DrawNotification(false, true)
+	TriggerEvent("pNotify:SendNotification", {text=msg, type="success",layout = "centerRight", timeout=5000})
 end
 
 ESX.ShowAdvancedNotification = function(title, subject, msg, icon, iconType)
